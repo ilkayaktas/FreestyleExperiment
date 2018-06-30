@@ -86,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		987A09DF20E845AC00EC86CD /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9899ED2920E587AC008A7152 /* Main.storyboard */,
+				9899ED3120E587AD008A7152 /* LaunchScreen.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		987A09E020E845C900EC86CD /* customviews */ = {
+			isa = PBXGroup;
+			children = (
+				985CDFDB20E8377F0099B65A /* CurrencyCell.swift */,
+			);
+			path = customviews;
+			sourceTree = "<group>";
+		};
 		9899ED1920E587AC008A7152 = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +160,6 @@
 			children = (
 				985CDFD520E82D9F0099B65A /* CurrencyModel.swift */,
 				985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */,
-				985CDFDB20E8377F0099B65A /* CurrencyCell.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -151,8 +167,8 @@
 		9899ED5720E58BF0008A7152 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				9899ED2920E587AC008A7152 /* Main.storyboard */,
-				9899ED3120E587AD008A7152 /* LaunchScreen.storyboard */,
+				987A09E020E845C900EC86CD /* customviews */,
+				987A09DF20E845AC00EC86CD /* storyboard */,
 			);
 			path = view;
 			sourceTree = "<group>";
