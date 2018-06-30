@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeScreenController: UIViewController {
 
+   
+    @IBAction func onInfoClicked(_ sender: Any) {
+        print("Info clicked!")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
+}
+
+
+// unwind methods. These are used from PlayerDetailsView
+extension WelcomeScreenController {
+    
+    @IBAction func doneByCurrencyCalculatorScreen(_ segue: UIStoryboardSegue) {
+        print("Welcome back!")
+    }
 
 }
 

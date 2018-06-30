@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		985CDFD620E82D9F0099B65A /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD520E82D9F0099B65A /* CurrencyModel.swift */; };
+		985CDFD820E82EA20099B65A /* CurrencyModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */; };
+		985CDFDA20E8338F0099B65A /* AnotherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */; };
+		985CDFDC20E8377F0099B65A /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFDB20E8377F0099B65A /* CurrencyCell.swift */; };
+		987A09DE20E8428D00EC86CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987A09DD20E8428D00EC86CD /* Assets.xcassets */; };
 		9899ED2620E587AC008A7152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED2520E587AC008A7152 /* AppDelegate.swift */; };
 		9899ED2820E587AC008A7152 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED2720E587AC008A7152 /* WelcomeScreenController.swift */; };
 		9899ED2B20E587AC008A7152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9899ED2920E587AC008A7152 /* Main.storyboard */; };
 		9899ED2E20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED2C20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld */; };
-		9899ED3020E587AD008A7152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9899ED2F20E587AD008A7152 /* Assets.xcassets */; };
 		9899ED3320E587AD008A7152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9899ED3120E587AD008A7152 /* LaunchScreen.storyboard */; };
 		9899ED3E20E587AD008A7152 /* FreestyleExperimentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED3D20E587AD008A7152 /* FreestyleExperimentTests.swift */; };
 		9899ED4920E587AE008A7152 /* FreestyleExperimentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */; };
-		9899ED5B20E59322008A7152 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED5A20E59322008A7152 /* CurrencyController.swift */; };
+		9899ED5B20E59322008A7152 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		985CDFD520E82D9F0099B65A /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModelGenerator.swift; sourceTree = "<group>"; };
+		985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherTableViewController.swift; sourceTree = "<group>"; };
+		985CDFDB20E8377F0099B65A /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		987A09DD20E8428D00EC86CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9899ED2220E587AC008A7152 /* FreestyleExperiment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreestyleExperiment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9899ED2520E587AC008A7152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9899ED2720E587AC008A7152 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
 		9899ED2A20E587AC008A7152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9899ED2D20E587AC008A7152 /* FreestyleExperiment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreestyleExperiment.xcdatamodel; sourceTree = "<group>"; };
-		9899ED2F20E587AD008A7152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9899ED3220E587AD008A7152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9899ED3420E587AD008A7152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9899ED3920E587AD008A7152 /* FreestyleExperimentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreestyleExperimentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +58,7 @@
 		9899ED4420E587AE008A7152 /* FreestyleExperimentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreestyleExperimentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreestyleExperimentUITests.swift; sourceTree = "<group>"; };
 		9899ED4A20E587AE008A7152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9899ED5A20E59322008A7152 /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
+		9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,9 @@
 		9899ED2420E587AC008A7152 /* FreestyleExperiment */ = {
 			isa = PBXGroup;
 			children = (
+				987A09DD20E8428D00EC86CD /* Assets.xcassets */,
 				9899ED5920E58C18008A7152 /* coredata */,
 				9899ED2520E587AC008A7152 /* AppDelegate.swift */,
-				9899ED2F20E587AD008A7152 /* Assets.xcassets */,
 				9899ED3420E587AD008A7152 /* Info.plist */,
 				9899ED5620E58BE7008A7152 /* model */,
 				9899ED5720E58BF0008A7152 /* view */,
@@ -133,6 +141,9 @@
 		9899ED5620E58BE7008A7152 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				985CDFD520E82D9F0099B65A /* CurrencyModel.swift */,
+				985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */,
+				985CDFDB20E8377F0099B65A /* CurrencyCell.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -150,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				9899ED2720E587AC008A7152 /* WelcomeScreenController.swift */,
-				9899ED5A20E59322008A7152 /* CurrencyController.swift */,
+				9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */,
+				985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -268,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9899ED3320E587AD008A7152 /* LaunchScreen.storyboard in Resources */,
-				9899ED3020E587AD008A7152 /* Assets.xcassets in Resources */,
+				987A09DE20E8428D00EC86CD /* Assets.xcassets in Resources */,
 				9899ED2B20E587AC008A7152 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,9 +306,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				985CDFDC20E8377F0099B65A /* CurrencyCell.swift in Sources */,
+				985CDFDA20E8338F0099B65A /* AnotherTableViewController.swift in Sources */,
+				985CDFD820E82EA20099B65A /* CurrencyModelGenerator.swift in Sources */,
+				985CDFD620E82D9F0099B65A /* CurrencyModel.swift in Sources */,
 				9899ED2820E587AC008A7152 /* WelcomeScreenController.swift in Sources */,
 				9899ED2620E587AC008A7152 /* AppDelegate.swift in Sources */,
-				9899ED5B20E59322008A7152 /* CurrencyController.swift in Sources */,
+				9899ED5B20E59322008A7152 /* CurrencyTableViewController.swift in Sources */,
 				9899ED2E20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YMT6QQ8EK5;
 				INFOPLIST_FILE = FreestyleExperiment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YMT6QQ8EK5;
 				INFOPLIST_FILE = FreestyleExperiment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

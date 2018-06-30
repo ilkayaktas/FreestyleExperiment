@@ -4,7 +4,7 @@
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="relationship" inverseEntity="School" syncable="YES"/>
         <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Person"/>
         </fetchedProperty>
@@ -13,9 +13,10 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="relationship" inverseEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="134"/>
-        <element name="School" positionX="225" positionY="18" width="128" height="90"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="41"/>
+        <element name="School" positionX="225" positionY="18" width="128" height="28"/>
     </elements>
 </model>
