@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9823C26D20E8FF9D0091B9AC /* CurrencyListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823C26C20E8FF9D0091B9AC /* CurrencyListElement.swift */; };
 		985CDFD620E82D9F0099B65A /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD520E82D9F0099B65A /* CurrencyModel.swift */; };
 		985CDFD820E82EA20099B65A /* CurrencyModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */; };
 		985CDFDA20E8338F0099B65A /* AnotherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9823C26C20E8FF9D0091B9AC /* CurrencyListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListElement.swift; sourceTree = "<group>"; };
 		985CDFD520E82D9F0099B65A /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModelGenerator.swift; sourceTree = "<group>"; };
 		985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherTableViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				985CDFD520E82D9F0099B65A /* CurrencyModel.swift */,
 				985CDFD720E82EA20099B65A /* CurrencyModelGenerator.swift */,
+				9823C26C20E8FF9D0091B9AC /* CurrencyListElement.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				985CDFD820E82EA20099B65A /* CurrencyModelGenerator.swift in Sources */,
 				985CDFD620E82D9F0099B65A /* CurrencyModel.swift in Sources */,
 				9899ED2820E587AC008A7152 /* WelcomeScreenController.swift in Sources */,
+				9823C26D20E8FF9D0091B9AC /* CurrencyListElement.swift in Sources */,
 				9899ED2620E587AC008A7152 /* AppDelegate.swift in Sources */,
 				9899ED5B20E59322008A7152 /* CurrencyTableViewController.swift in Sources */,
 				9899ED2E20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld in Sources */,

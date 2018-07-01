@@ -10,16 +10,53 @@ import UIKit
 
 class AnotherTableViewController: UITableViewController {
 
-    var currencies = CurrencyModelGenerator.generateData()
+    var currencies:[CurrencyModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.title = "Custom Title by IA"
+        
+        //Implementing URLSession
+        let urlString = "https://www.doviz.com/api/v1/currencies/all/latest"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+            
+            //Implement JSON decoding and parsing
+            do {
+                //Decode retrived data with JSONDecoder and assing type of Article object
+                let currencyData = try JSONDecoder().decode([CurrencyListElement].self, from: data)
+                
+                //Get back to the main queue
+                DispatchQueue.main.async {
+                    print(currencyData)
+                    // convert api model to app model
+                    for cur in currencyData {
+                        self.currencies.append(CurrencyModel(code: cur.code, name: cur.fullName, buying: cur.buying, selling: cur.selling))
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            }.resume()
+        //End implementing URLSession
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,14 +80,13 @@ class AnotherTableViewController: UITableViewController {
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }
