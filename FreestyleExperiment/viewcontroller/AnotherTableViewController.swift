@@ -40,10 +40,10 @@ class AnotherTableViewController: UITableViewController {
                 
                 //Get back to the main queue
                 DispatchQueue.main.async {
-                    print(currencyData)
+                    // print(currencyData)
                     // convert api model to app model
                     for cur in currencyData {
-                        self.currencies.append(CurrencyModel(code: cur.code, name: cur.fullName, buying: cur.buying, selling: cur.selling))
+                        self.currencies.append(CurrencyModel(code: cur.code, name: cur.fullName, buying: Double(round(cur.buying*10000)/10000), selling: Double(round(cur.selling*10000)/10000)))
                     }
                     
                     self.tableView.reloadData()
@@ -56,7 +56,22 @@ class AnotherTableViewController: UITableViewController {
             }.resume()
         //End implementing URLSession
 
+        // ###########
         
+        
+        let urlString1 = "http://www.tcmb.gov.tr/kurlar/today.xml"
+        guard let url1 = URL(string: urlString1) else { return }
+        
+        URLSession.shared.dataTask(with: url1) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+            guard let data = data else { return }
+            
+            print(data)
+            
+            }.resume()
     }
 
     override func didReceiveMemoryWarning() {

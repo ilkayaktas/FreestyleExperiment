@@ -20,7 +20,6 @@
 		9899ED3320E587AD008A7152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9899ED3120E587AD008A7152 /* LaunchScreen.storyboard */; };
 		9899ED3E20E587AD008A7152 /* FreestyleExperimentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED3D20E587AD008A7152 /* FreestyleExperimentTests.swift */; };
 		9899ED4920E587AE008A7152 /* FreestyleExperimentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */; };
-		9899ED5B20E59322008A7152 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		9899ED4420E587AE008A7152 /* FreestyleExperimentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreestyleExperimentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreestyleExperimentUITests.swift; sourceTree = "<group>"; };
 		9899ED4A20E587AE008A7152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				9899ED2720E587AC008A7152 /* WelcomeScreenController.swift */,
-				9899ED5A20E59322008A7152 /* CurrencyTableViewController.swift */,
 				985CDFD920E8338F0099B65A /* AnotherTableViewController.swift */,
 			);
 			path = viewcontroller;
@@ -332,7 +329,6 @@
 				9899ED2820E587AC008A7152 /* WelcomeScreenController.swift in Sources */,
 				9823C26D20E8FF9D0091B9AC /* CurrencyListElement.swift in Sources */,
 				9899ED2620E587AC008A7152 /* AppDelegate.swift in Sources */,
-				9899ED5B20E59322008A7152 /* CurrencyTableViewController.swift in Sources */,
 				9899ED2E20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMT6QQ8EK5;
 				INFOPLIST_FILE = FreestyleExperiment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMT6QQ8EK5;
 				INFOPLIST_FILE = FreestyleExperiment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

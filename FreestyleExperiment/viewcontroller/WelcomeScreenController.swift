@@ -32,7 +32,11 @@ class WelcomeScreenController: UIViewController {
 extension WelcomeScreenController {
     
     @IBAction func doneByCurrencyCalculatorScreen(_ segue: UIStoryboardSegue) {
-        print("Welcome back!")
+        print("Welcome back CurrencyCalculatorScreen!")
+    }
+    
+    @IBAction func doneByConstraintsScreen(_ segue: UIStoryboardSegue){
+        print("Welcome back from ConstraintsScreen!")
     }
 
 }
