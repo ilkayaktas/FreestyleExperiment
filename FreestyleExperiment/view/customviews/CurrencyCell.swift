@@ -22,8 +22,8 @@ class CurrencyCell: UITableViewCell {
             
             nameLabel.text = currency.name
             codeLabel.text = currency.code
-            buyingLabel.text = "\(currency.buying)"
-            sellingLabel.text = "\(currency.selling)"
+            buyingLabel.text = String(format: "%.4f", currency.buying)
+            sellingLabel.text = String(format: "%.4f", currency.selling)
             
             flagImageView.image = image(forRating: currency.code)
         }

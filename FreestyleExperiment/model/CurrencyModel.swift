@@ -13,4 +13,18 @@ struct CurrencyModel: Codable{
     var name : String
     var buying : Double
     var selling : Double
+    
+    init() {
+        code = ""
+        name = ""
+        buying = 0
+        selling = 0
+    }
+    
+    init(code: String, name: String, buying: Double, selling: Double) {
+        self.name = name
+        self.code = code
+        self.buying = buying
+        self.selling = selling
+    }
 }

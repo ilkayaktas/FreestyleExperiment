@@ -1,5 +1,5 @@
 //
-//  AnotherTableViewController.swift
+//  FreeMarketTableViewController.swift
 //  FreestyleExperiment
 //
 //  Created by İlkay Aktaş on 1.07.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnotherTableViewController: UITableViewController {
+class FreeMarketTableViewController: UITableViewController {
 
     var currencies:[CurrencyModel] = []
     
@@ -20,7 +20,7 @@ class AnotherTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.navigationItem.title = "Custom Title by IA"
+        // self.navigationItem.title = "Custom Title by IA"
         
         //Implementing URLSession
         let urlString = "https://www.doviz.com/api/v1/currencies/all/latest"
@@ -35,7 +35,7 @@ class AnotherTableViewController: UITableViewController {
             
             //Implement JSON decoding and parsing
             do {
-                //Decode retrived data with JSONDecoder and assing type of Article object
+                //Decode retrieved data with JSONDecoder and assing type of Article object
                 let currencyData = try JSONDecoder().decode([CurrencyListElement].self, from: data)
                 
                 //Get back to the main queue
@@ -59,19 +59,7 @@ class AnotherTableViewController: UITableViewController {
         // ###########
         
         
-        let urlString1 = "http://www.tcmb.gov.tr/kurlar/today.xml"
-        guard let url1 = URL(string: urlString1) else { return }
         
-        URLSession.shared.dataTask(with: url1) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
-            guard let data = data else { return }
-            
-            print(data)
-            
-            }.resume()
     }
 
     override func didReceiveMemoryWarning() {
