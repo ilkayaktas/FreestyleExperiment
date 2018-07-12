@@ -17,30 +17,27 @@ class CentralBankTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        loadData()
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+    func loadData(){
         let urlString1 = "http://www.tcmb.gov.tr/kurlar/today.xml"
         guard let url1 = URL(string: urlString1) else { return }
-        
-        print("geliyor ")
+
         URLSession.shared.dataTask(with: url1) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }
-            
+
             guard let data = data else { return }
-            
+
             print(data)
-            
+
             let parser = XMLParser(data: data)
             parser.delegate = self
             parser.parse()
-            
-            }.resume()
+
+        }.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +62,11 @@ class CentralBankTableViewController: UITableViewController {
         return cell
     }
 
-    
+    @objc func refresh(sender:AnyObject) {
+        loadData()
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
 
 }
 extension CentralBankTableViewController: XMLParserDelegate{
