@@ -100,6 +100,7 @@ class CentralBankTableViewController: UITableViewController {
             var vc = segue.destination as! CalculationTableViewController
             vc.refCurrency = refCurrency
             vc.refValue = refValue
+            vc.currencies = calculateCurrencies(refCurrency: refCurrency!, refValue: refValue!)
         }
 
     }
@@ -190,5 +191,24 @@ extension CentralBankTableViewController {
     
     @IBAction func doneByCalculatorScreen(_ segue: UIStoryboardSegue) {
         print("Welcome back CurrencyCalculatorScreen!")
+    }
+
+    func calculateCurrencies(refCurrency : CurrencyModel, refValue : Double) -> [CurrencyModel]{
+        var calculatedCurrencies:[CurrencyModel] = []
+        calculatedCurrencies.append(CurrencyModel(code: "TRY", name: "Türk Lirası",
+                buying: refValue*refCurrency.buying,
+                selling: refValue*refCurrency.selling))
+
+        for currency in currencies {
+            var resultByRefValueBuying = currency.buying / refCurrency.buying
+            var resultByRefValueSelling = currency.selling / refCurrency.selling
+
+            var resultBuying = refValue / resultByRefValueBuying
+            var resultSelling = refValue / resultByRefValueSelling
+
+            calculatedCurrencies.append(CurrencyModel(code: currency.code, name: currency.name, buying: resultBuying, selling: resultSelling))
+        }
+
+        return calculatedCurrencies
     }
 }

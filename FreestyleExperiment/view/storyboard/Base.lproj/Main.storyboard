@@ -190,14 +190,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQD-tu-GI0">
-                                <rect key="frame" x="16" y="122" width="343" height="525"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCellIdentifier" rowHeight="60" id="rga-3S-Z7t" customClass="CurrencyCell" customModule="FreestyleExperiment" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalculatedCurrencyCellIdentifier" rowHeight="60" id="rga-3S-Z7t" customClass="CurrencyCell" customModule="FreestyleExperiment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rga-3S-Z7t" id="czk-03-lmp">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6c-t1-Y4i" userLabel="View1">
@@ -294,6 +294,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fz3-hK-VEw" id="EXb-K6-rK5"/>
+                                    <outlet property="delegate" destination="Fz3-hK-VEw" id="iRO-KT-QDg"/>
+                                </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AUD" translatesAutoresizingMaskIntoConstraints="NO" id="oSv-j0-BYQ">
                                 <rect key="frame" x="162" y="35" width="50" height="50"/>
@@ -320,14 +324,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dVq-YO-3ts" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="15" id="9CH-z3-tDa"/>
-                            <constraint firstItem="qGw-Eo-lrR" firstAttribute="trailing" secondItem="dQD-tu-GI0" secondAttribute="trailing" constant="16" id="Ac6-X5-Sg7"/>
+                            <constraint firstItem="qGw-Eo-lrR" firstAttribute="trailing" secondItem="dQD-tu-GI0" secondAttribute="trailing" id="Ac6-X5-Sg7"/>
                             <constraint firstItem="qGw-Eo-lrR" firstAttribute="trailing" secondItem="3kZ-wE-MFp" secondAttribute="trailing" constant="16" id="G01-NA-z3l"/>
                             <constraint firstItem="oSv-j0-BYQ" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="15" id="H8F-mx-QTk"/>
                             <constraint firstItem="oSv-j0-BYQ" firstAttribute="centerX" secondItem="3kZ-wE-MFp" secondAttribute="centerX" id="RW1-WU-1SK"/>
                             <constraint firstItem="dQD-tu-GI0" firstAttribute="top" secondItem="3kZ-wE-MFp" secondAttribute="bottom" constant="8" id="kM1-mw-5eu"/>
                             <constraint firstItem="3kZ-wE-MFp" firstAttribute="top" secondItem="oSv-j0-BYQ" secondAttribute="bottom" constant="8" id="nL0-qz-urb"/>
-                            <constraint firstItem="qGw-Eo-lrR" firstAttribute="bottom" secondItem="dQD-tu-GI0" secondAttribute="bottom" constant="20" id="oIa-Ts-qVP"/>
-                            <constraint firstItem="dQD-tu-GI0" firstAttribute="leading" secondItem="qGw-Eo-lrR" secondAttribute="leading" constant="16" id="ozz-e2-njE"/>
+                            <constraint firstItem="qGw-Eo-lrR" firstAttribute="bottom" secondItem="dQD-tu-GI0" secondAttribute="bottom" id="oIa-Ts-qVP"/>
+                            <constraint firstItem="dQD-tu-GI0" firstAttribute="leading" secondItem="qGw-Eo-lrR" secondAttribute="leading" id="ozz-e2-njE"/>
                             <constraint firstItem="3kZ-wE-MFp" firstAttribute="leading" secondItem="qGw-Eo-lrR" secondAttribute="leading" constant="16" id="sea-Xk-tdM"/>
                             <constraint firstItem="dVq-YO-3ts" firstAttribute="leading" secondItem="qGw-Eo-lrR" secondAttribute="leading" constant="16" id="z48-nB-jPw"/>
                         </constraints>
@@ -339,6 +343,7 @@
                     <connections>
                         <outlet property="flagImage" destination="oSv-j0-BYQ" id="2YH-vK-eWy"/>
                         <outlet property="refCurrencyLabel" destination="3kZ-wE-MFp" id="vOo-mf-WVM"/>
+                        <outlet property="tableView" destination="dQD-tu-GI0" id="1wF-f0-va2"/>
                     </connections>
                 </viewController>
             </objects>
