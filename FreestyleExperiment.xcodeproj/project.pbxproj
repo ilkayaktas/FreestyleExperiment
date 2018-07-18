@@ -21,6 +21,7 @@
 		9899ED3E20E587AD008A7152 /* FreestyleExperimentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED3D20E587AD008A7152 /* FreestyleExperimentTests.swift */; };
 		9899ED4920E587AE008A7152 /* FreestyleExperimentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */; };
 		98A0F6D320F399000006AD1D /* CentralBankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0F6D220F399000006AD1D /* CentralBankTableViewController.swift */; };
+		98A8D6D320FE96F60017E870 /* CalculationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8D6D220FE96F60017E870 /* CalculationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9899ED4820E587AE008A7152 /* FreestyleExperimentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreestyleExperimentUITests.swift; sourceTree = "<group>"; };
 		9899ED4A20E587AE008A7152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98A0F6D220F399000006AD1D /* CentralBankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankTableViewController.swift; sourceTree = "<group>"; };
+		98A8D6D220FE96F60017E870 /* CalculationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				9899ED2720E587AC008A7152 /* WelcomeScreenController.swift */,
 				985CDFD920E8338F0099B65A /* FreeMarketTableViewController.swift */,
 				98A0F6D220F399000006AD1D /* CentralBankTableViewController.swift */,
+				98A8D6D220FE96F60017E870 /* CalculationTableViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				9823C26D20E8FF9D0091B9AC /* CurrencyListElement.swift in Sources */,
 				9899ED2620E587AC008A7152 /* AppDelegate.swift in Sources */,
 				9899ED2E20E587AC008A7152 /* FreestyleExperiment.xcdatamodeld in Sources */,
+				98A8D6D320FE96F60017E870 /* CalculationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

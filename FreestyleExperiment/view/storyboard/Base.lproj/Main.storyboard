@@ -171,6 +171,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Serbest Piyasa Kurları" id="zVk-TD-3pV"/>
+                    <connections>
+                        <segue destination="Fz3-hK-VEw" kind="presentation" identifier="CalculateScreenSegueIdentifier" id="BmV-ds-k7X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGh-iF-SFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,27 +182,15 @@
         <!--Calculation Table View Controller-->
         <scene sceneID="Nt2-HC-g9u">
             <objects>
+                <exit id="Gls-so-odk" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRX-ZT-ROq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Fz3-hK-VEw" customClass="CalculationTableViewController" customModule="FreestyleExperiment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hA-WI-7lW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AUD" translatesAutoresizingMaskIntoConstraints="NO" id="oSv-j0-BYQ">
-                                <rect key="frame" x="162" y="40" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="APf-68-tTY"/>
-                                    <constraint firstAttribute="width" secondItem="oSv-j0-BYQ" secondAttribute="height" multiplier="1:1" id="BFf-WL-R5Q"/>
-                                    <constraint firstAttribute="height" constant="50" id="rgS-Xe-hLt"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR 324" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-wE-MFp">
-                                <rect key="frame" x="16" y="98" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQD-tu-GI0">
-                                <rect key="frame" x="16" y="127" width="343" height="520"/>
+                                <rect key="frame" x="16" y="122" width="343" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCellIdentifier" rowHeight="60" id="rga-3S-Z7t" customClass="CurrencyCell" customModule="FreestyleExperiment" customModuleProvider="target">
@@ -304,8 +295,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AUD" translatesAutoresizingMaskIntoConstraints="NO" id="oSv-j0-BYQ">
+                                <rect key="frame" x="162" y="35" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="APf-68-tTY"/>
+                                    <constraint firstAttribute="width" secondItem="oSv-j0-BYQ" secondAttribute="height" multiplier="1:1" id="BFf-WL-R5Q"/>
+                                    <constraint firstAttribute="height" constant="50" id="rgS-Xe-hLt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR 324" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-wE-MFp">
+                                <rect key="frame" x="16" y="93" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVq-YO-3ts">
-                                <rect key="frame" x="16" y="40" width="37" height="30"/>
+                                <rect key="frame" x="16" y="35" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <segue destination="Gls-so-odk" kind="unwind" unwindAction="doneByCalculatorScreen:" id="bXZ-XW-SN7"/>
@@ -314,10 +319,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dVq-YO-3ts" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="20" id="9CH-z3-tDa"/>
+                            <constraint firstItem="dVq-YO-3ts" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="15" id="9CH-z3-tDa"/>
                             <constraint firstItem="qGw-Eo-lrR" firstAttribute="trailing" secondItem="dQD-tu-GI0" secondAttribute="trailing" constant="16" id="Ac6-X5-Sg7"/>
                             <constraint firstItem="qGw-Eo-lrR" firstAttribute="trailing" secondItem="3kZ-wE-MFp" secondAttribute="trailing" constant="16" id="G01-NA-z3l"/>
-                            <constraint firstItem="oSv-j0-BYQ" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="20" id="H8F-mx-QTk"/>
+                            <constraint firstItem="oSv-j0-BYQ" firstAttribute="top" secondItem="qGw-Eo-lrR" secondAttribute="top" constant="15" id="H8F-mx-QTk"/>
                             <constraint firstItem="oSv-j0-BYQ" firstAttribute="centerX" secondItem="3kZ-wE-MFp" secondAttribute="centerX" id="RW1-WU-1SK"/>
                             <constraint firstItem="dQD-tu-GI0" firstAttribute="top" secondItem="3kZ-wE-MFp" secondAttribute="bottom" constant="8" id="kM1-mw-5eu"/>
                             <constraint firstItem="3kZ-wE-MFp" firstAttribute="top" secondItem="oSv-j0-BYQ" secondAttribute="bottom" constant="8" id="nL0-qz-urb"/>
@@ -331,11 +336,13 @@
                     <navigationItem key="navigationItem" id="9d8-6k-9yh">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="rHf-HN-jHa"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flagImage" destination="oSv-j0-BYQ" id="2YH-vK-eWy"/>
+                        <outlet property="refCurrencyLabel" destination="3kZ-wE-MFp" id="vOo-mf-WVM"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sRX-ZT-ROq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Gls-so-odk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="1507.1964017991006"/>
+            <point key="canvasLocation" x="3265" y="1660"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eT7-BR-Rmc">
@@ -471,6 +478,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Merkez Bankası Kurları" id="die-cw-sWo"/>
+                    <connections>
+                        <segue destination="Fz3-hK-VEw" kind="presentation" identifier="CalculateScreenSegueIdentifier" id="P3r-3r-9ek"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chV-pd-yLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -619,4 +629,7 @@
         <image name="central_bank" width="30" height="28"/>
         <image name="free_market" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="P3r-3r-9ek"/>
+    </inferredMetricsTieBreakers>
 </document>

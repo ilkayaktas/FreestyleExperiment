@@ -13,7 +13,9 @@ class CentralBankTableViewController: UITableViewController {
     var currentParsingElement: String = ""
     var currencyModel : CurrencyModel?
     var currencies:[CurrencyModel] = []
-    
+    var refCurrency: CurrencyModel?
+    var refValue: Double?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +62,46 @@ class CentralBankTableViewController: UITableViewController {
         cell.currency = currency
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //getting the index path of selected row
+        let indexPath = tableView.indexPathForSelectedRow
+
+        //getting the current cell from the index path
+        let currentCell = tableView.cellForRow(at: indexPath!)! as! CurrencyCell
+
+
+
+        let alertController = UIAlertController(title: "\((currentCell.currency?.name)!)", message: "Hesaplamak istediğiniz miktarı giriniz!" , preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Hesapla", style: .default, handler: { (action:UIAlertAction) in
+
+            self.refCurrency = currentCell.currency!
+            self.refValue = Double(alertController.textFields![0].text!)
+            self.performSegue(withIdentifier: "CalculateScreenSegueIdentifier", sender: CentralBankTableViewController.self)
+
+        })
+        let cancelAction = UIAlertAction(title: "İptal", style: .default, handler: { (action:UIAlertAction) in
+            print(currentCell.currency)
+        })
+        alertController.addAction(defaultAction)
+        alertController.addAction(cancelAction)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Hesaplanacak döviz miktarı..."
+            textField.keyboardType = .numberPad
+        }
+        present(alertController, animated: true, completion: nil)
+
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CalculateScreenSegueIdentifier"{
+            var vc = segue.destination as! CalculationTableViewController
+            vc.refCurrency = refCurrency
+            vc.refValue = refValue
+        }
+
     }
 
     @objc func refresh(sender:AnyObject) {
@@ -140,5 +182,13 @@ extension String {
         return self.components(separatedBy: " ")
                 .map { return $0.lowercased().capitalizingFirstLetter() }
                 .joined()
+    }
+}
+
+// unwind methods. These are used from PlayerDetailsView
+extension CentralBankTableViewController {
+    
+    @IBAction func doneByCalculatorScreen(_ segue: UIStoryboardSegue) {
+        print("Welcome back CurrencyCalculatorScreen!")
     }
 }
