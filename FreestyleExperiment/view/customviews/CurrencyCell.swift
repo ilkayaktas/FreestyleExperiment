@@ -22,8 +22,20 @@ class CurrencyCell: UITableViewCell {
             
             nameLabel.text = currency.name
             codeLabel.text = currency.code
-            buyingLabel.text = String(format: "%.4f", currency.buying)
-            sellingLabel.text = String(format: "%.4f", currency.selling)
+            if(currency.buying >= 1000 || currency.selling >= 1000){
+                buyingLabel.text = String(format: "%.1f", currency.buying)
+                sellingLabel.text = String(format: "%.1f", currency.selling)
+            } else if(currency.buying >= 100 || currency.selling >= 100){
+                buyingLabel.text = String(format: "%.2f", currency.buying)
+                sellingLabel.text = String(format: "%.2f", currency.selling)
+            } else if(currency.buying >= 10 || currency.selling >= 10){
+                buyingLabel.text = String(format: "%.3f", currency.buying)
+                sellingLabel.text = String(format: "%.3f", currency.selling)
+            } else {
+                buyingLabel.text = String(format: "%.4f", currency.buying)
+                sellingLabel.text = String(format: "%.4f", currency.selling)
+            }
+
             
             flagImageView.image = image(forRating: currency.code)
         }

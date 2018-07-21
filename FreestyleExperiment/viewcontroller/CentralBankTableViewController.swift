@@ -51,8 +51,6 @@ class CentralBankTableViewController: UITableViewController {
 
             guard let data = data else { return }
 
-            print(data)
-
             let parser = XMLParser(data: data)
             parser.delegate = self
             parser.parse()
@@ -100,7 +98,7 @@ class CentralBankTableViewController: UITableViewController {
 
         })
         let cancelAction = UIAlertAction(title: "İptal", style: .default, handler: { (action:UIAlertAction) in
-            print(currentCell.currency)
+            print("İptal edildi!")
         })
         alertController.addAction(defaultAction)
         alertController.addAction(cancelAction)
@@ -175,7 +173,6 @@ extension CentralBankTableViewController: XMLParserDelegate{
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if(elementName == "Currency"){
-            print(currencyModel.debugDescription)
             currencies.append(currencyModel!)
             currencyModel = nil
         }
