@@ -18,7 +18,22 @@ class FreeMarketTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadData()
-        
+
+        refreshControl = UIRefreshControl()
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl!)
+        }
+
+        // Configure Refresh Control
+        refreshControl?.addTarget(self, action: #selector(refreshCurrencyData(_:)), for: .valueChanged)
+    }
+
+    @objc private func refreshCurrencyData(_ sender: Any) {
+        // Fetch Weather Data
+        loadData()
     }
 
     func loadData(){
@@ -36,6 +51,7 @@ class FreeMarketTableViewController: UITableViewController {
             do {
                 //Decode retrieved data with JSONDecoder and assing type of Article object
                 let currencyData = try JSONDecoder().decode([CurrencyListElement].self, from: data)
+                self.currencies.removeAll()
 
                 //Get back to the main queue
                 DispatchQueue.main.async {
@@ -46,6 +62,7 @@ class FreeMarketTableViewController: UITableViewController {
                     }
 
                     self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
 
             } catch let jsonError {

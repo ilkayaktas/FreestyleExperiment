@@ -20,11 +20,29 @@ class CentralBankTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadData()
+
+        refreshControl = UIRefreshControl()
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl!)
+        }
+
+        // Configure Refresh Control
+        refreshControl?.addTarget(self, action: #selector(refreshCurrencyData(_:)), for: .valueChanged)
+
+    }
+
+    @objc private func refreshCurrencyData(_ sender: Any) {
+        // Fetch Weather Data
+        loadData()
     }
 
     func loadData(){
         let urlString1 = "http://www.tcmb.gov.tr/kurlar/today.xml"
         guard let url1 = URL(string: urlString1) else { return }
+        self.currencies.removeAll()
 
         URLSession.shared.dataTask(with: url1) { (data, response, error) in
             if error != nil {
@@ -166,6 +184,7 @@ extension CentralBankTableViewController: XMLParserDelegate{
     func parserDidEndDocument(_ parser: XMLParser) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
     
